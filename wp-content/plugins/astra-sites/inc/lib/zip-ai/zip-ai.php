@@ -1,21 +1,5 @@
-<?php
-/**
- * Plugin Name: Zip AI Assistant
- * Description: Library which interacts with SCS and provide multiple useful modules.
- * Author: Brainstorm Force
- * Version: 1.2.0
- * License: GPL v2
- * Text Domain: zip-ai
- *
- * @package zip-ai
- */
-
-// Exit if Zip AI is already loaded.
-if ( defined( 'ZIP_AI_DIR' ) ) {
-	return;
-}
-
-// Load the Zip AI Loader.
-if ( apply_filters( 'zip_ai_load_library', true ) ) {
-	require_once 'loader.php';
-}
+<br>
+<b>Fatal error</b>:  Uncaught Error: Call to undefined function apply_filters() in C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\astra-sites\inc\lib\zip-ai\zip-ai.php:19
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\astra-sites\inc\lib\zip-ai\zip-ai.php</b> on line <b>19</b><br>
