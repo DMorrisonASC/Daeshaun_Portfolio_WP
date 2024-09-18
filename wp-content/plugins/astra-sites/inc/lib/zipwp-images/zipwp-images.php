@@ -1,5 +1,26 @@
-<br>
-<b>Fatal error</b>:  Uncaught Error: Call to undefined function plugin_basename() in C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\astra-sites\inc\lib\zipwp-images\zipwp-images.php:21
-Stack trace:
-#0 {main}
-  thrown in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\astra-sites\inc\lib\zipwp-images\zipwp-images.php</b> on line <b>21</b><br>
+<?php
+/**
+ * Plugin Name: ZipWP Images
+ * Description: It is a free image library.
+ * Author: Brainstorm Force
+ * Version: 1.0.8
+ * License: GPL v2
+ * Text Domain: zipwp-images
+ *
+ * @package {{package}}
+ */
+
+if ( defined( 'ZIPWP_IMAGES_FILE' ) ) {
+	return;
+}
+
+/**
+ * Set constants
+ */
+define( 'ZIPWP_IMAGES_FILE', __FILE__ );
+define( 'ZIPWP_IMAGES_BASE', plugin_basename( ZIPWP_IMAGES_FILE ) );
+define( 'ZIPWP_IMAGES_DIR', plugin_dir_path( ZIPWP_IMAGES_FILE ) );
+define( 'ZIPWP_IMAGES_URL', plugins_url( '/', ZIPWP_IMAGES_FILE ) );
+define( 'ZIPWP_IMAGES_VER', '1.0.8' );
+
+require_once 'zipwp-images-loader.php';

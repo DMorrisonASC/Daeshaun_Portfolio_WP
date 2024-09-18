@@ -20,7 +20,7 @@
 
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'portfolioDB' );
+define( 'DB_NAME', 'daeshaundb' );
 
 /** Database username */
 define( 'DB_USER', 'root' );
@@ -48,14 +48,14 @@ define( 'DB_COLLATE', '' );
  *
  * @since 2.6.0
  */
-define( 'AUTH_KEY',         'OgIiF_^ez,X~5g7Nc1&!OOOR$A}oT`D==6P^*`ROd:bH*}t!pDu]7{/C_,zx>>yb' );
-define( 'SECURE_AUTH_KEY',  'aH+4tQB{<bS:JXfX+u!3+=lu KV!4@E0t &c#*m@rfX]~o:6<p{4)$0W3CPd#[Gf' );
-define( 'LOGGED_IN_KEY',    '$&Msm+9|68x*Yf:0`lU@$MLDw>jZA^Ti0;+^DU&[OnVj8eIvlR}6yryDRGu!t7C(' );
-define( 'NONCE_KEY',        '/({.%,{)]ZU6&`1%5}^$#D5$eom[{0<5,*}/PJb%WHI!N+[HreKtB*Z5TWdrXJvX' );
-define( 'AUTH_SALT',        'stJ$HO6jGEJ} xr-WMnhK:+Xn>d3}4PF=>!u:vR]*Px8im8S<Rj&CuFucj<8DCKB' );
-define( 'SECURE_AUTH_SALT', 'fvu?JZg*eQH(~#GeTQz?=>j&*=aFSFq6HqBtYuiM?2S|bp,!]H#Jy@Dn~R+E,nfM' );
-define( 'LOGGED_IN_SALT',   '>iZuZuFG4tBK^6V:>csc%HQmR9zjpo1E|JI:T_rcuA&YbCGL?F{9v[v8D>iiF,=L' );
-define( 'NONCE_SALT',       'AJ^X2!Lzr[u+b.i@pUE&s?P];Z$|pY*R*b}0uMBu#/FAPcQ9^SWo)U}j&@?J4+6P' );
+define( 'AUTH_KEY',         '{!9eI:|A}|83`N%*;k{lV:wU GxCy&cg^]hp?Av}7.##Dt.L?he+Mj-lgMB!8a9|' );
+define( 'SECURE_AUTH_KEY',  ',JHL5{R1he1OW5UaDrH^9x +*O+^~+cpQuuAZ}V4V?_=OcK#pmL7?&a{*Hp7x>!]' );
+define( 'LOGGED_IN_KEY',    'eaG7(4{{X_j?~AZe;p5>(rT(y|gqb1dW[}Hj4x:{Y%awdxy`:SZ@`hji8sY^<[A;' );
+define( 'NONCE_KEY',        ')>{YDoZ%.g~Sws87bi*fj*(`)p%lOp3`E|_I&fmv78k2Xr)Hk)PH_A^!AaY]E@9W' );
+define( 'AUTH_SALT',        '0/GG%~(GBy8 1kxrssQzuLHAvCC`J)@AGk.XzgXio)|(R4D%_{.AuD5Yeo~-XA`n' );
+define( 'SECURE_AUTH_SALT', '%qVGe)Rs&pDgQ@SZhy#qT@;@}brQ(m)acz~1oZ5qg1<z10iZ)vtbe`Q.)f-g~]Ru' );
+define( 'LOGGED_IN_SALT',   'sR$x14&`at8#xiAN2z=9d51x__*@:V` Y#A)_qU=z:yqYQ4/^6l#^L[>y@#+O O5' );
+define( 'NONCE_SALT',       '&zTM-1SGKh8=!?H?J;B(/UgOiN|,o<|,Nl7+.J]dBMKFDF14eBJse@a@$4MOcxB<' );
 
 /**#@-*/
 
@@ -79,11 +79,9 @@ $table_prefix = 'wp_';
  *
  * @link https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/
  */
-define( 'WP_DEBUG', true );
+define( 'WP_DEBUG', false );
 
 /* Add any custom values between this line and the "stop editing" line. */
-define('WP_MEMORY_LIMIT', '256M');
-
 
 
 

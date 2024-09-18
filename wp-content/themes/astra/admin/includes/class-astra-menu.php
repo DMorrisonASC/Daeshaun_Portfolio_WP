@@ -212,7 +212,7 @@ class Astra_Menu {
 					$capability,
 					'admin.php?page=' . self::$plugin_slug . '&path=woocommerce'
 				);
-			} elseif ( ! $this->spectra_has_top_level_menu() ){
+			} elseif ( ! $this->spectra_has_top_level_menu() ) {
 				add_submenu_page( // phpcs:ignore WPThemeReview.PluginTerritory.NoAddAdminPages.add_menu_pages_add_submenu_page -- Taken the menu on top level
 					self::$plugin_slug,
 					'Spectra',
@@ -288,7 +288,7 @@ class Astra_Menu {
 			return;
 		}
 
-		wp_enqueue_style( 'astra-admin-font', 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap', array(), ASTRA_THEME_VERSION ); // Styles.
+		wp_enqueue_style( 'astra-admin-font', 'https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500&display=swap', array(), ASTRA_THEME_VERSION ); // Styles.
 
 		wp_enqueue_style( 'wp-components' );
 
@@ -718,66 +718,24 @@ class Astra_Menu {
 				'activations' => '200,000+',
 				'logoPath'    => array(
 					'internal_icon' => false,
-					'icon_path'     => 'https://ps.w.org/cartflows/assets/icon.svg'
-				),
-			),
-			array(
-				'title'       => 'Variations Swatches by CartFlows',
-				'subtitle'    => $under_useful_plugins ? __( 'Beautiful store variation swatches.', 'astra' ) : __( 'Convert WooCommerce variation dropdown attributes into attractive swatches instantly.', 'astra' ),
-				'status'      => self::get_plugin_status( 'variation-swatches-woo/variation-swatches-woo.php' ),
-				'slug'        => 'variation-swatches-woo',
-				'path'        => 'variation-swatches-woo/variation-swatches-woo.php',
-				'redirection' => admin_url( 'admin.php?page=cfvsw_settings' ),
-				'ratings'     => '(30+)',
-				'activations' => '200,000+',
-				'logoPath'    => array(
-					'internal_icon' => false,
-					'icon_path'     => 'https://ps.w.org/variation-swatches-woo/assets/icon.svg',
-				),
-			),
-			array(
-				'title'       => 'Cart Abandonment Recovery',
-				'subtitle'    => $under_useful_plugins ? __( 'Recover lost revenue automatically.', 'astra' ) : __( 'Capture emails at checkout and send follow-up emails to recover lost revenue.', 'astra' ),
-				'status'      => self::get_plugin_status( 'woo-cart-abandonment-recovery/woo-cart-abandonment-recovery.php' ),
-				'slug'        => 'woo-cart-abandonment-recovery',
-				'path'        => 'woo-cart-abandonment-recovery/woo-cart-abandonment-recovery.php',
-				'redirection' => admin_url( 'admin.php?page=woo-cart-abandonment-recovery' ),
-				'ratings'     => '(475+)',
-				'activations' => '200,000+',
-				'logoPath'    => array(
-					'internal_icon' => false,
-					'icon_path'     => 'https://ps.w.org/woo-cart-abandonment-recovery/assets/icon-128x128.png',
+					'icon_path'     => 'https://ps.w.org/cartflows/assets/icon.svg',
 				),
 			),
 		);
 
 		if ( ! $under_useful_plugins ) {
 			$extensions[] = array(
-				'title'       => 'Stripe Payment Gateway for WooCommerce',
-				'subtitle'    => __( 'Stripe Payments for WooCommerce ensures secure acceptance of credit cards, Apple Pay, and Google Pay.', 'astra' ),
-				'status'      => self::get_plugin_status( 'checkout-plugins-stripe-woo/checkout-plugins-stripe-woo.php' ),
-				'slug'        => 'checkout-plugins-stripe-woo',
-				'path'        => 'checkout-plugins-stripe-woo/checkout-plugins-stripe-woo.php',
-				'redirection' => ( false === get_option( 'cpsw_setup_status', false ) ) ? admin_url( 'index.php?page=cpsw-onboarding' ) : admin_url( 'admin.php?page=wc-settings&tab=cpsw_api_settings' ),
-				'ratings'     => '(15+)',
-				'activations' => '100,000+',
+				'title'       => 'SureTriggers: WordPress Automation',
+				'subtitle'    =>  __( 'Connect your WordPress plugins, WooCommerce sites, apps, and websites for powerful automations.', 'astra' ),
+				'status'      => self::get_plugin_status( 'suretriggers/suretriggers.php' ),
+				'slug'        => 'suretriggers',
+				'path'        => 'suretriggers/suretriggers.php',
+				'redirection' => admin_url( 'admin.php?page=suretriggers' ),
+				'ratings'     => '(30+)',
+				'activations' => '50,000+',
 				'logoPath'    => array(
 					'internal_icon' => false,
-					'icon_path'     => 'https://ps.w.org/checkout-plugins-stripe-woo/assets/icon-128x128.gif',
-				),
-			);
-			$extensions[] = array(
-				'title'       => 'PayPal Payments For WooCommerce',
-				'subtitle'    => __( 'PayPal Payments For WooCommerce simplifies and secures PayPal transactions on your store.', 'astra' ),
-				'status'      => self::get_plugin_status( 'checkout-paypal-woo/checkout-paypal-woo.php' ),
-				'slug'        => 'checkout-paypal-woo',
-				'path'        => 'checkout-paypal-woo/checkout-paypal-woo.php',
-				'redirection' => ( false === get_option( 'cpsw_setup_status', false ) ) ? admin_url( 'index.php?page=cpsw-onboarding' ) : admin_url( 'admin.php?page=wc-settings&tab=cpsw_api_settings' ),
-				'ratings'     => '(2)',
-				'activations' => '3,000+',
-				'logoPath'    => array(
-					'internal_icon' => false,
-					'icon_path'     => 'https://ps.w.org/checkout-paypal-woo/assets/icon-128x128.jpg',
+					'icon_path'     => 'https://ps.w.org/suretriggers/assets/icon-256x256.png',
 				),
 			);
 		}
@@ -796,6 +754,70 @@ class Astra_Menu {
 				'icon_path'     => 'https://ps.w.org/ultimate-addons-for-gutenberg/assets/icon.svg',
 			),
 		);
+
+		$extensions[] = array(
+			'title'       => $under_useful_plugins ? 'Stripe Payment' : 'Stripe Payment Gateway for WooCommerce',
+			'subtitle'    => $under_useful_plugins ? __( 'Stripe Payments for WooCommerce.', 'astra' ) : __( 'Stripe Payments for WooCommerce securely accepts credit cards, Apple Pay, and Google Pay.', 'astra' ),
+			'status'      => self::get_plugin_status( 'checkout-plugins-stripe-woo/checkout-plugins-stripe-woo.php' ),
+			'slug'        => 'checkout-plugins-stripe-woo',
+			'path'        => 'checkout-plugins-stripe-woo/checkout-plugins-stripe-woo.php',
+			'redirection' => ( false === get_option( 'cpsw_setup_status', false ) ) ? admin_url( 'index.php?page=cpsw-onboarding' ) : admin_url( 'admin.php?page=wc-settings&tab=cpsw_api_settings' ),
+			'ratings'     => '(15+)',
+			'activations' => '100,000+',
+			'logoPath'    => array(
+				'internal_icon' => false,
+				'icon_path'     => 'https://ps.w.org/checkout-plugins-stripe-woo/assets/icon-128x128.gif',
+			),
+		);
+
+		if ( ! $under_useful_plugins ) {
+			$extensions[] = array(
+				'title'       => 'PayPal Payments For WooCommerce',
+				'subtitle'    => __( 'PayPal Payments For WooCommerce simplifies and secures PayPal transactions on your store.', 'astra' ),
+				'status'      => self::get_plugin_status( 'checkout-paypal-woo/checkout-paypal-woo.php' ),
+				'slug'        => 'checkout-paypal-woo',
+				'path'        => 'checkout-paypal-woo/checkout-paypal-woo.php',
+				'redirection' => ( false === get_option( 'cpsw_setup_status', false ) ) ? admin_url( 'index.php?page=cpsw-onboarding' ) : admin_url( 'admin.php?page=wc-settings&tab=cpsw_api_settings' ),
+				'ratings'     => '(2)',
+				'activations' => '3,000+',
+				'logoPath'    => array(
+					'internal_icon' => false,
+					'icon_path'     => 'https://ps.w.org/checkout-paypal-woo/assets/icon-128x128.jpg',
+				),
+			);
+		}
+
+		$extensions[] = array(
+			'title'       => 'Cart Abandonment Recovery',
+			'subtitle'    => $under_useful_plugins ? __( 'Recover lost revenue automatically.', 'astra' ) : __( 'Capture emails at checkout and send follow-up emails to recover lost revenue.', 'astra' ),
+			'status'      => self::get_plugin_status( 'woo-cart-abandonment-recovery/woo-cart-abandonment-recovery.php' ),
+			'slug'        => 'woo-cart-abandonment-recovery',
+			'path'        => 'woo-cart-abandonment-recovery/woo-cart-abandonment-recovery.php',
+			'redirection' => admin_url( 'admin.php?page=woo-cart-abandonment-recovery' ),
+			'ratings'     => '(475+)',
+			'activations' => '200,000+',
+			'logoPath'    => array(
+				'internal_icon' => false,
+				'icon_path'     => 'https://ps.w.org/woo-cart-abandonment-recovery/assets/icon-128x128.png',
+			),
+		);
+
+		if ( ! $under_useful_plugins ) {
+			$extensions[] = array(
+				'title'       => 'Variations Swatches by CartFlows',
+				'subtitle'    =>  __( 'Convert WooCommerce variation dropdown attributes into attractive swatches instantly.', 'astra' ),
+				'status'      => self::get_plugin_status( 'variation-swatches-woo/variation-swatches-woo.php' ),
+				'slug'        => 'variation-swatches-woo',
+				'path'        => 'variation-swatches-woo/variation-swatches-woo.php',
+				'redirection' => admin_url( 'admin.php?page=cfvsw_settings' ),
+				'ratings'     => '(30+)',
+				'activations' => '200,000+',
+				'logoPath'    => array(
+					'internal_icon' => false,
+					'icon_path'     => 'https://ps.w.org/variation-swatches-woo/assets/icon.svg',
+				),
+			);
+		}
 
 		return $extensions;
 	}
@@ -990,18 +1012,10 @@ class Astra_Menu {
 			ASTRA_THEME_VERSION
 		);
 
-		wp_register_style(
-			'astra-admin-google-fonts',
-			'https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap',
-			array(),
-			ASTRA_THEME_VERSION
-		);
-
 		wp_enqueue_script( $handle );
 
 		wp_set_script_translations( $handle, 'astra' );
 
-		wp_enqueue_style( 'astra-admin-google-fonts' );
 		wp_enqueue_style( $handle );
 
 		wp_style_add_data( $handle, 'rtl', 'replace' );

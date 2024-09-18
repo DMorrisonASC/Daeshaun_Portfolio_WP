@@ -107,6 +107,7 @@ if ( ! class_exists( 'Astra_Woocommerce' ) ) :
 
 			add_action( 'astra_cart_in_menu_class', array( $this, 'header_cart_icon_class' ), 99 );
 
+			// WooCommerce Store Notice.
 			add_filter( 'woocommerce_demo_store', array( $this, 'astra_woocommerce_update_store_notice_atts' ) );
 
 			add_filter( 'astra_dynamic_theme_css', array( $this, 'astra_woocommerce_store_dynamic_css' ) );
@@ -473,6 +474,7 @@ if ( ! class_exists( 'Astra_Woocommerce' ) ) :
 					$notice = __( 'This is a demo store for testing purposes &mdash; no orders shall be fulfilled.', 'astra' );
 				}
 
+				// deepcode ignore InsecureHash: WooCommerce uses the md5 function to generate the store notice ID. This is an acceptable risk due to the WooCommerce dependency.
 				$notice_id     = md5( $notice );
 				$notice_hidden = isset( $_COOKIE[ "store_notice{$notice_id}" ] ) && 'hidden' === $_COOKIE[ "store_notice{$notice_id}" ];
 			}
@@ -480,10 +482,6 @@ if ( ! class_exists( 'Astra_Woocommerce' ) ) :
 			if ( ! $notice_hidden && 'hang-over-top' === astra_get_option( 'store-notice-position' ) ) {
 				$css_output_desktop['.ast-woocommerce-store-notice-hanged'] = array(
 					'margin-top' => '57px',
-				);
-				$css_output_desktop['.woocommerce-store-notice']            = array(
-					'max-height' => '57px',
-					'height'     => '100%',
 				);
 			}
 
@@ -776,6 +774,17 @@ if ( ! class_exists( 'Astra_Woocommerce' ) ) :
 			if ( is_product() && astra_get_option( 'single-product-sticky-add-to-cart' ) ) {
 				$styles['sticky-add-to-cart'] = array(
 					'src'     => $css_uri . 'sticky-add-to-cart' . $file_prefix . '.css',
+					'deps'    => '',
+					'version' => ASTRA_THEME_VERSION,
+					'media'   => 'all',
+					'has_rtl' => true,
+				);
+			}
+
+			// Check if the current post/page content contains the WooCommerce Cart or Checkout block.
+			if ( has_block( 'woocommerce/cart' ) || has_block( 'woocommerce/checkout' ) ) {
+				$styles['astra-woocommerce-blocks'] = array(
+					'src'     => $css_uri . 'woocommerce-blocks' . $file_prefix . '.css',
 					'deps'    => '',
 					'version' => ASTRA_THEME_VERSION,
 					'media'   => 'all',
@@ -1482,9 +1491,8 @@ if ( ! class_exists( 'Astra_Woocommerce' ) ) :
 		 * @return boolean
 		 */
 		public static function astra_update_default_font_styling() {
-			$astra_settings                          = get_option( ASTRA_THEME_SETTINGS );
-			$astra_settings['ast-font-style-update'] = isset( $astra_settings['ast-font-style-update'] ) ? false : true;
-			return apply_filters( 'astra_default_font_style_update', $astra_settings['ast-font-style-update'] );
+			$astra_settings = get_option( ASTRA_THEME_SETTINGS );
+			return apply_filters( 'astra_default_font_style_update', isset( $astra_settings['ast-font-style-update'] ) ? false : true );
 		}
 
 		/**
@@ -2786,7 +2794,7 @@ if ( ! class_exists( 'Astra_Woocommerce' ) ) :
 						visibility: visible;
 					}
 
-					.ast-on-card-button:hover .ast-card-action-tooltip {
+					.ast-on-card-button:hover .ast-card-action-tooltip, .ast-on-card-button:focus .ast-card-action-tooltip {
 						opacity: 1;
 						visibility: visible;
 					}
@@ -3560,9 +3568,8 @@ if ( ! class_exists( 'Astra_Woocommerce' ) ) :
 		 * @return boolean false if it is an existing user , true if not.
 		 */
 		public static function astra_global_btn_woo_comp() {
-			$astra_settings                       = get_option( ASTRA_THEME_SETTINGS );
-			$astra_settings['global-btn-woo-css'] = isset( $astra_settings['global-btn-woo-css'] ) ? false : true;
-			return apply_filters( 'astra_global_btn_woo_comp', $astra_settings['global-btn-woo-css'] );
+			$astra_settings = get_option( ASTRA_THEME_SETTINGS );
+			return apply_filters( 'astra_global_btn_woo_comp', isset( $astra_settings['global-btn-woo-css'] ) ? false : true );
 		}
 
 		/**

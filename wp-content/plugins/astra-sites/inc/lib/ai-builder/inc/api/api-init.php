@@ -1,2 +1,36 @@
-<br>
-<b>Fatal error</b>:  Trait &quot;AiBuilder\Inc\Traits\Instance&quot; not found in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\astra-sites\inc\lib\ai-builder\inc\api\api-init.php</b> on line <b>18</b><br>
+<?php
+/**
+ * INitialize API.
+ *
+ * @package {{package}}
+ * @since 0.0.1
+ */
+
+namespace AiBuilder\Inc\Api;
+
+use AiBuilder\Inc\Traits\Instance;
+
+/**
+ * Api_Base
+ *
+ * @since 0.0.1
+ */
+class ApiInit {
+
+	use Instance;
+
+	/**
+	 * Controller object.
+	 *
+	 * @var object class.
+	 */
+	public $controller = null;
+
+	/**
+	 * Constructor
+	 *
+	 * @since 0.0.1
+	 */
+	public function __construct() {
+	}
+}
