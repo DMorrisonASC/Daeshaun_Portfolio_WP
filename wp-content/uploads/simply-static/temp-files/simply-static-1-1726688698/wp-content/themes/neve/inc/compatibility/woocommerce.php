@@ -1,2 +1,0 @@
-<br>
-<b>Fatal error</b>:  Trait &quot;Neve\Customizer\Defaults\Layout&quot; not found in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\themes\neve\inc\compatibility\woocommerce.php</b> on line <b>26</b><br>

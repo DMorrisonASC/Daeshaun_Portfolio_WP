@@ -1,2 +1,0 @@
-<br>
-<b>Fatal error</b>:  Trait &quot;Neve\Customizer\Defaults\Single_Post&quot; not found in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\themes\neve\inc\admin\metabox\manager.php</b> on line <b>23</b><br>
