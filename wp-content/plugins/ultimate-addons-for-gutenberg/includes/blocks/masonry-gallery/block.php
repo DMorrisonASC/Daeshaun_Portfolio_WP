@@ -1,19 +1,5 @@
-<?php
-/**
- * Block Information & Attributes File.
- *
- * @since 2.0.0
- *
- * @package uagb
- */
-
-$block_slug = 'uagb/masonry-gallery';
-$block_data = array(
-	'slug'        => '',
-	'title'       => __( 'Masonry Gallery', 'ultimate-addons-for-gutenberg' ),
-	'description' => __( 'Display your core gallery in a masonary layout.', 'ultimate-addons-for-gutenberg' ),
-	'default'     => true,
-	'extension'   => true,
-	'attributes'  => array(),
-	'deprecated'  => false,
-);
+<br>
+<b>Fatal error</b>:  Uncaught Error: Call to undefined function __() in C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\masonry-gallery\block.php:13
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\masonry-gallery\block.php</b> on line <b>13</b><br>

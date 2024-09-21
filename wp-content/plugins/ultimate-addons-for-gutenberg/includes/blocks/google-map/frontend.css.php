@@ -1,38 +1,5 @@
-<?php
-/**
- * Frontend CSS & Google Fonts loading File.
- *
- * @since 2.0.0
- *
- * @package uagb
- */
-
-$t_selectors = array();
-$m_selectors = array();
-$selectors   = array();
-
-$selectors = array(
-	' .uagb-google-map__iframe' => array(
-		'height' => UAGB_Helper::get_css_value( $attr['height'], 'px' ),
-	),
-);
-
-$m_selectors = array(
-	' .uagb-google-map__iframe' => array(
-		'height' => UAGB_Helper::get_css_value( $attr['heightMobile'], 'px' ),
-	),
-);
-
-$t_selectors = array(
-	' .uagb-google-map__iframe' => array(
-		'height' => UAGB_Helper::get_css_value( $attr['heightTablet'], 'px' ),
-	),
-);
-
-$combined_selectors = array(
-	'desktop' => $selectors,
-	'tablet'  => $t_selectors,
-	'mobile'  => $m_selectors,
-);
-
-return UAGB_Helper::generate_all_css( $combined_selectors, ' .uagb-block-' . $id );
+<br>
+<b>Fatal error</b>:  Uncaught Error: Class &quot;UAGB_Helper&quot; not found in C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\google-map\frontend.css.php:16
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\google-map\frontend.css.php</b> on line <b>16</b><br>

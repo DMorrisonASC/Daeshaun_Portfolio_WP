@@ -1,21 +1,5 @@
-<?php
-/**
- * Frontend CSS & Google Fonts loading File.
- *
- * @since 2.0.0
- * @var mixed[] $attr
- * @var string $id
- * @package uagb
- */
-
-$selectors = UAGB_Block_Helper::get_social_share_child_selectors( $attr, $id, true );
-
-$desktop = UAGB_Helper::generate_css( $selectors, '.uagb-block-' . $id );
-
-$generated_css = array(
-	'desktop' => $desktop,
-	'tablet'  => '',
-	'mobile'  => '',
-);
-
-return $generated_css;
+<br>
+<b>Fatal error</b>:  Uncaught Error: Class &quot;UAGB_Block_Helper&quot; not found in C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\social-share-child\frontend.css.php:11
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\social-share-child\frontend.css.php</b> on line <b>11</b><br>

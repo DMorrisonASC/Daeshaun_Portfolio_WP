@@ -1,20 +1,5 @@
-<?php
-/**
- * Block Information & Attributes File.
- *
- * @since 2.0.0
- *
- * @package uagb
- */
-
-$block_slug = 'uagb/tabs-child';
-$block_data = array(
-	'slug'        => '',
-	'link'        => '',
-	'title'       => __( 'Tabs child', 'ultimate-addons-for-gutenberg' ),
-	'description' => __( 'Display your content in a tab.', 'ultimate-addons-for-gutenberg' ),
-	'default'     => true,
-	'extension'   => false,
-	'is_child'    => true,
-	'deprecated'  => false,
-);
+<br>
+<b>Fatal error</b>:  Uncaught Error: Call to undefined function __() in C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\tabs-child\block.php:14
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\tabs-child\block.php</b> on line <b>14</b><br>

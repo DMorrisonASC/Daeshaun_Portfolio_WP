@@ -1,20 +1,8 @@
-<?php
-/**
- * Frontend JS File.
- *
- * @since 2.0.0
- *
- * @package uagb
- */
-
-$base_selector = 'uagb-block-';
-$selector      = $base_selector . $id;
-
-ob_start();
-?>
+<br>
+<b>Warning</b>:  Undefined variable $id in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\lottie\frontend.js.php</b> on line <b>11</b><br>
 window.addEventListener( 'DOMContentLoaded', function() {
-	UAGBLottie._run( <?php echo wp_json_encode( $attr ); ?>, '<?php echo esc_attr( $selector ); ?>' );
-});
-<?php
-return ob_get_clean();
-?>
+	UAGBLottie._run( <br>
+<b>Fatal error</b>:  Uncaught Error: Call to undefined function wp_json_encode() in C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\lottie\frontend.js.php:16
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\lottie\frontend.js.php</b> on line <b>16</b><br>

@@ -1,22 +1,7 @@
-<?php
-/**
- * Frontend JS File.
- *
- * @since 2.15.0
- *
- * @package uagb
- */
-
-/**
- * Adding this comment to avoid PHPStan errors of undefined variable as these variables are defined else where.
- *
- * @var string $id
- */
-
-$block_name = 'icon';
-$selector   = '.uagb-block-' . $id;
-$js         = '';
-
-$js .= Spectra_Icon::render_icon_click( $id );
-
-return $js;
+<br>
+<b>Warning</b>:  Undefined variable $id in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\icon\frontend.js.php</b> on line <b>17</b><br>
+<br>
+<b>Fatal error</b>:  Uncaught Error: Class &quot;Spectra_Icon&quot; not found in C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\icon\frontend.js.php:20
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\icon\frontend.js.php</b> on line <b>20</b><br>

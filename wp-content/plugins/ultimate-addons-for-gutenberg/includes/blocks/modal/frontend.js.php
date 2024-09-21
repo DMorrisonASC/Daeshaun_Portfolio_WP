@@ -1,20 +1,8 @@
-<?php
-/**
- * Frontend JS File.
- *
- * @since 2.2.0
- * @var mixed[] $attr
- * @var int $id
- * @package uagb
- */
-
-$selector = '.uagb-block-' . $id;
-ob_start();
-?>
+<br>
+<b>Warning</b>:  Undefined variable $id in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\modal\frontend.js.php</b> on line <b>11</b><br>
 	window.addEventListener( 'DOMContentLoaded', function() {
-		UAGBModal.init( '<?php echo esc_attr( $selector ); ?>' );
-	});
-<?php
-$dynamic_js = apply_filters( 'spectra_modal_frontend_dynamic_js', ob_get_clean(), $selector, $attr );
-return $dynamic_js;
-?>
+		UAGBModal.init( '<br>
+<b>Fatal error</b>:  Uncaught Error: Call to undefined function esc_attr() in C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\modal\frontend.js.php:15
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\modal\frontend.js.php</b> on line <b>15</b><br>

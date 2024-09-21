@@ -1,9 +1,6 @@
-<?php
-/**
- * Title: Search
- * Slug: twentytwentyfour/hidden-search
- * Inserter: no
- */
-?>
 
-<!-- wp:search {"label":"<?php echo esc_attr_x( 'Search', 'search form label', 'twentytwentyfour' ); ?>","showLabel":false,"buttonText":"<?php echo esc_attr_x( 'Search', 'search button text', 'twentytwentyfour' ); ?>","fontSize":"medium"} /-->
+<!-- wp:search {"label":"<br />
+<b>Fatal error</b>:  Uncaught Error: Call to undefined function esc_attr_x() in C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\themes\twentytwentyfour\patterns\hidden-search.php:9
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\themes\twentytwentyfour\patterns\hidden-search.php</b> on line <b>9</b><br />
