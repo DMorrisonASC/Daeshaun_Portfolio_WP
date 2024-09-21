@@ -1,45 +1,5 @@
 document.addEventListener("DOMContentLoaded", function(){ 				window.addEventListener( 'DOMContentLoaded', () => {
-					const blockScope = document.querySelector( '.uagb-block-aede508e' );
-					if ( ! blockScope ) {
-						return;
-					}
-
-					const anchorElement = blockScope.querySelector('a');
-					if (!anchorElement) {
-						return;
-					} 
-
-					 
-					blockScope.addEventListener('keydown', (event) => {
-						if ( 13 === event.keyCode || 32 === event.keyCode ) {
-							event.preventDefault();
-							 
-							anchorElement.click();	
-						}
-					} );
-				} );
-							window.addEventListener( 'DOMContentLoaded', () => {
-					const blockScope = document.querySelector( '.uagb-block-0e8f0ee0' );
-					if ( ! blockScope ) {
-						return;
-					}
-
-					const anchorElement = blockScope.querySelector('a');
-					if (!anchorElement) {
-						return;
-					} 
-
-					 
-					blockScope.addEventListener('keydown', (event) => {
-						if ( 13 === event.keyCode || 32 === event.keyCode ) {
-							event.preventDefault();
-							 
-							anchorElement.click();	
-						}
-					} );
-				} );
-							window.addEventListener( 'DOMContentLoaded', () => {
-					const blockScope = document.querySelector( '.uagb-block-148159ec' );
+					const blockScope = document.querySelector( '.uagb-block-e4313e81' );
 					if ( ! blockScope ) {
 						return;
 					}
