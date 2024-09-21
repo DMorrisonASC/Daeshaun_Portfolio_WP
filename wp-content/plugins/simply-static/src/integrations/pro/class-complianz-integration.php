@@ -1,5 +1,21 @@
-<br>
-<b>Fatal error</b>:  Uncaught Error: Class &quot;Simply_Static\Pro_Integration&quot; not found in C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\simply-static\src\integrations\pro\class-complianz-integration.php:4
-Stack trace:
-#0 {main}
-  thrown in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\simply-static\src\integrations\pro\class-complianz-integration.php</b> on line <b>4</b><br>
+<?php
+namespace Simply_Static;
+
+class Complianz_Integration extends Pro_Integration {
+	/**
+	 * A string ID of integration.
+	 *
+	 * @var string
+	 */
+	protected $id = 'complianz';
+
+	public function __construct() {
+		$this->name        = __( 'Complianz | GDPR/CCPA Cookie Consent', 'simply-static' );
+		$this->description = __( 'Integrates Complianz Cookie banner to work on the static site.', 'simply-static' );
+	}
+
+	public function dependency_active() {
+		return class_exists( 'COMPLIANZ' );
+	}
+
+}

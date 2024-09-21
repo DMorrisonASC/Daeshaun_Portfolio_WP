@@ -1,28 +1,26 @@
-<br>
-<b>Warning</b>:  Undefined variable $id in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\inline-notice\frontend.js.php</b> on line <b>11</b><br>
-<br>
-<b>Warning</b>:  Undefined variable $attr in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\inline-notice\frontend.js.php</b> on line <b>13</b><br>
-<br>
-<b>Warning</b>:  Trying to access array offset on value of type null in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\inline-notice\frontend.js.php</b> on line <b>13</b><br>
-<br>
-<b>Warning</b>:  Undefined variable $attr in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\inline-notice\frontend.js.php</b> on line <b>14</b><br>
-<br>
-<b>Warning</b>:  Trying to access array offset on value of type null in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\inline-notice\frontend.js.php</b> on line <b>14</b><br>
-<br>
-<b>Warning</b>:  Undefined variable $attr in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\inline-notice\frontend.js.php</b> on line <b>15</b><br>
-<br>
-<b>Warning</b>:  Trying to access array offset on value of type null in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\inline-notice\frontend.js.php</b> on line <b>15</b><br>
-<br>
-<b>Warning</b>:  Undefined variable $attr in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\inline-notice\frontend.js.php</b> on line <b>16</b><br>
-<br>
-<b>Warning</b>:  Trying to access array offset on value of type null in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\inline-notice\frontend.js.php</b> on line <b>16</b><br>
-<br>
-<b>Warning</b>:  Undefined variable $attr in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\inline-notice\frontend.js.php</b> on line <b>17</b><br>
-<br>
-<b>Warning</b>:  Trying to access array offset on value of type null in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\inline-notice\frontend.js.php</b> on line <b>17</b><br>
+<?php
+/**
+ * Frontend JS File.
+ *
+ * @since 2.0.0
+ *
+ * @package uagb
+ */
+
+$base_selector = '.uagb-block-';
+$selector      = $base_selector . $id;
+$js_attr       = array(
+	'c_id'              => $attr['c_id'],
+	'cookies'           => $attr['cookies'],
+	'close_cookie_days' => $attr['close_cookie_days'],
+	'noticeDismiss'     => $attr['noticeDismiss'],
+	'icon'              => $attr['icon'],
+);
+
+ob_start();
+?>
 window.addEventListener( 'DOMContentLoaded', function() {
-	UAGBInlineNotice.init( <br>
-<b>Fatal error</b>:  Uncaught Error: Call to undefined function wp_json_encode() in C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\inline-notice\frontend.js.php:23
-Stack trace:
-#0 {main}
-  thrown in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\inline-notice\frontend.js.php</b> on line <b>23</b><br>
+	UAGBInlineNotice.init( <?php echo wp_json_encode( $js_attr ); ?>, '<?php echo esc_attr( $selector ); ?>' );
+});
+<?php
+return ob_get_clean();

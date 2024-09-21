@@ -1,5 +1,20 @@
-<br>
-<b>Fatal error</b>:  Uncaught Error: Call to undefined function __() in C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\post-excerpt\block.php:15
-Stack trace:
-#0 {main}
-  thrown in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\post-excerpt\block.php</b> on line <b>15</b><br>
+<?php
+/**
+ * Block Information & Attributes File.
+ *
+ * @since 2.0.0
+ *
+ * @package uagb
+ */
+
+$block_slug = 'uagb/post-excerpt';
+$block_data = array(
+	'slug'        => '',
+
+	'link'        => '',
+	'title'       => __( 'Post Excerpt', 'ultimate-addons-for-gutenberg' ),
+	'description' => __( 'Show your post\'s excerpt ', 'ultimate-addons-for-gutenberg' ),
+	'default'     => true,
+	'is_child'    => true,
+	'deprecated'  => false,
+);

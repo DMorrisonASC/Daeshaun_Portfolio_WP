@@ -1,6 +1,12 @@
-<p>
+<?php
+/**
+ * Title: Post meta
+ * Slug: twentytwentyfour/hidden-post-meta
+ * Inserter: no
+ */
+?>
+
 <!-- wp:group {"layout":{"type":"constrained"}} -->
-</p>
 <div class="wp-block-group">
 	<!-- wp:group {"style":{"spacing":{"blockGap":"0.3em"}},"layout":{"type":"flex","justifyContent":"left"}} -->
 	<div class="wp-block-group">
@@ -11,11 +17,14 @@
 		<!-- /wp:paragraph -->
 
 		<!-- wp:paragraph {"fontSize":"small","textColor":"contrast-2"} -->
-		<p class="has-small-font-size has-contrast-2-color has-text-color"><br>
-<b>Fatal error</b>:  Uncaught Error: Call to undefined function esc_html_x() in C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\themes\twentytwentyfour\patterns\hidden-post-meta.php:20
-Stack trace:
-#0 {main}
-  thrown in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\themes\twentytwentyfour\patterns\hidden-post-meta.php</b> on line <b>20</b><br>
-</p>
+		<p class="has-small-font-size has-contrast-2-color has-text-color"><?php echo esc_html_x( 'by', 'Prefix for the post author block: By author name', 'twentytwentyfour' ); ?></p>
+		<!-- /wp:paragraph -->
+
+		<!-- wp:post-author-name {"isLink":true} /-->
+
+		<!-- wp:post-terms {"term":"category","prefix":"<?php echo esc_html_x( 'in ', 'Prefix for the post category block: in category name', 'twentytwentyfour' ); ?>"} /-->
+
+	</div>
+	<!-- /wp:group -->
 </div>
-</div>
+<!-- /wp:group -->

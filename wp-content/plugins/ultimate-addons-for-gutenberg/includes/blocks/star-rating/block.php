@@ -1,5 +1,24 @@
-<br>
-<b>Fatal error</b>:  Uncaught Error: Call to undefined function __() in C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\star-rating\block.php:16
-Stack trace:
-#0 {main}
-  thrown in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\star-rating\block.php</b> on line <b>16</b><br>
+<?php
+/**
+ * Block Information.
+ *
+ * @since 2.0.0
+ *
+ * @package uagb
+ */
+
+$block_slug = 'uagb/star-rating';
+$block_data = array(
+	'slug'             => '',
+	'doc'              => 'star-rating-block',
+	'admin_categories' => array( 'creative' ),
+	'link'             => 'star-rating',
+	'title'            => __( 'Star Ratings', 'ultimate-addons-for-gutenberg' ),
+	'description'      => __( 'Display customizable star ratings on your page.', 'ultimate-addons-for-gutenberg' ),
+	'default'          => true,
+	'priority'         => Spectra_Block_Prioritization::get_block_priority( 'star-rating' ),
+	'deprecated'       => false,
+	'dynamic_assets'   => array(
+		'dir' => 'star-rating',
+	),
+);

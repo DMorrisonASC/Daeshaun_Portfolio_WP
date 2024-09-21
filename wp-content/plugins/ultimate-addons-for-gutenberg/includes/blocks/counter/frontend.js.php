@@ -1,7 +1,39 @@
-<br>
-<b>Warning</b>:  Undefined variable $id in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\counter\frontend.js.php</b> on line <b>10</b><br>
-<br>
-<b>Fatal error</b>:  Uncaught Error: Call to undefined function apply_filters() in C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\counter\frontend.js.php:12
-Stack trace:
-#0 {main}
-  thrown in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\counter\frontend.js.php</b> on line <b>12</b><br>
+<?php
+/**
+ * Frontend JS File.
+ *
+ * @since 2.1.0
+ *
+ * @package uagb
+ */
+
+$selector = '.uagb-block-' . $id;
+
+$counter_options = apply_filters(
+	'uagb_counter_options',
+	array(
+		'layout'            => $attr['layout'],
+		'heading'           => $attr['heading'],
+		'numberPrefix'      => $attr['numberPrefix'],
+		'numberSuffix'      => $attr['numberSuffix'],
+		'startNumber'       => $attr['startNumber'],
+		'endNumber'         => $attr['endNumber'],
+		'totalNumber'       => $attr['totalNumber'],
+		'decimalPlaces'     => $attr['decimalPlaces'],
+		'animationDuration' => $attr['animationDuration'],
+		'thousandSeparator' => $attr['thousandSeparator'],
+		'circleSize'        => $attr['circleSize'],
+		'circleStokeSize'   => $attr['circleStokeSize'],
+		'isFrontend'        => $attr['isFrontend'],
+	),
+	$id
+);
+
+ob_start();
+?>
+window.addEventListener( 'load', function() {
+	UAGBCounter.init( '<?php echo esc_attr( $selector ); ?>', <?php echo wp_json_encode( $counter_options ); ?> );
+});
+<?php
+return ob_get_clean();
+?>

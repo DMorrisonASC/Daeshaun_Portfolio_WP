@@ -1,5 +1,19 @@
-<br>
-<b>Fatal error</b>:  Uncaught Error: Call to undefined function __() in C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\post-button\block.php:14
-Stack trace:
-#0 {main}
-  thrown in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\post-button\block.php</b> on line <b>14</b><br>
+<?php
+/**
+ * Block Information & Attributes File.
+ *
+ * @since 2.0.0
+ *
+ * @package uagb
+ */
+
+$block_slug = 'uagb/post-button';
+$block_data = array(
+	'slug'        => '',
+	'link'        => '',
+	'title'       => __( 'Post Button', 'ultimate-addons-for-gutenberg' ),
+	'description' => __( 'Customize this post button.', 'ultimate-addons-for-gutenberg' ),
+	'default'     => true,
+	'is_child'    => true,
+	'deprecated'  => false,
+);

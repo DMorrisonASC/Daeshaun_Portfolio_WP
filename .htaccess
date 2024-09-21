@@ -18,7 +18,7 @@ RewriteRule . /Daeshaun_Portfolio_WP/index.php [L]
 # The directives (lines) between "BEGIN Simply Static" and "END Simply Static" are
 # dynamically generated, and should only be modified via WordPress filters.
 # Any changes to the directives between these markers will be overwritten.
-<Files "C:\xampp\htdocs\Daeshaun_Portfolio_WP/wp-content/uploads\simply-static\0b38ae2d5febc49fc8640818660c898c-debug.txt">
+<Files "C:\xampp\htdocs\Daeshaun_Portfolio_WP/wp-content/uploads\simply-static\fcec03edbb86f4becbd1809173403778-debug.txt">
 require all denied
 require host localhost
 </Files>

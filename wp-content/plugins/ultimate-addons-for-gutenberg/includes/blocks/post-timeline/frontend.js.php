@@ -1,20 +1,32 @@
-<br>
-<b>Warning</b>:  Undefined variable $id in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\post-timeline\frontend.js.php</b> on line <b>11</b><br>
-<br>
-<b>Warning</b>:  Undefined variable $attr in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\post-timeline\frontend.js.php</b> on line <b>12</b><br>
-<br>
-<b>Warning</b>:  Trying to access array offset on value of type null in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\post-timeline\frontend.js.php</b> on line <b>12</b><br>
-<br>
-<b>Warning</b>:  Undefined variable $attr in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\post-timeline\frontend.js.php</b> on line <b>13</b><br>
-<br>
-<b>Warning</b>:  Trying to access array offset on value of type null in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\post-timeline\frontend.js.php</b> on line <b>13</b><br>
-<br>
-<b>Warning</b>:  Undefined variable $attr in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\post-timeline\frontend.js.php</b> on line <b>17</b><br>
-<br>
-<b>Warning</b>:  Trying to access array offset on value of type null in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\post-timeline\frontend.js.php</b> on line <b>17</b><br>
+<?php
+/**
+ * Frontend JS File.
+ *
+ * @since 2.0.0
+ * @var mixed[] $attr
+ * @var int $id
+ * @package uagb
+ */
+
+$selector                = '.uagb-block-' . $id;
+$timelineAlignment       = $attr['timelinAlignment'];
+$timelineAlignmentTablet = ! empty( $attr['timelinAlignmentTablet'] ) ? $attr['timelinAlignmentTablet'] : $attr['timelinAlignment'];
+$timelineAlignmentMobile = ! empty( $attr['timelinAlignmentMobile'] ) ? $attr['timelinAlignmentMobile'] : $timelineAlignmentTablet;
+
+$js_attr = array(
+	'block_id'               => $attr['block_id'],
+	'timelinAlignment'       => $timelineAlignment,
+	'timelinAlignmentTablet' => $timelineAlignmentTablet,
+	'timelinAlignmentMobile' => $timelineAlignmentMobile,
+);
+ob_start();
+?>
 window.addEventListener("DOMContentLoaded", function(){
-	UAGBTimelineClasses( <br>
-<b>Fatal error</b>:  Uncaught Error: Call to undefined function wp_json_encode() in C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\post-timeline\frontend.js.php:25
-Stack trace:
-#0 {main}
-  thrown in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\post-timeline\frontend.js.php</b> on line <b>25</b><br>
+	UAGBTimelineClasses( <?php echo wp_json_encode( $js_attr ); ?>, '<?php echo esc_attr( $selector ); ?>' );
+});
+window.addEventListener("resize", function(){
+	UAGBTimelineClasses( <?php echo wp_json_encode( $js_attr ); ?>, '<?php echo esc_attr( $selector ); ?>' );
+});
+<?php
+return ob_get_clean();
+?>

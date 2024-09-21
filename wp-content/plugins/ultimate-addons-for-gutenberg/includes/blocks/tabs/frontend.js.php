@@ -1,8 +1,23 @@
-<br>
-<b>Warning</b>:  Undefined variable $id in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\tabs\frontend.js.php</b> on line <b>11</b><br>
+<?php
+/**
+ * Frontend JS File.
+ *
+ * @since 2.0.0
+ * @var int $id
+ *
+ * @package uagb
+ */
+
+$selector = '.uagb-block-' . $id;
+ob_start();
+?>
 window.addEventListener( 'load', function() {
-	UAGBTabs.init( '<br>
-<b>Fatal error</b>:  Uncaught Error: Call to undefined function esc_attr() in C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\tabs\frontend.js.php:15
-Stack trace:
-#0 {main}
-  thrown in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\tabs\frontend.js.php</b> on line <b>15</b><br>
+	UAGBTabs.init( '<?php echo esc_attr( $selector ); ?>' );
+	UAGBTabs.anchorTabId( '<?php echo esc_attr( $selector ); ?>' );
+});
+window.addEventListener( 'hashchange', function() {
+	UAGBTabs.anchorTabId( '<?php echo esc_attr( $selector ); ?>' );
+}, false );
+<?php
+return ob_get_clean();
+?>

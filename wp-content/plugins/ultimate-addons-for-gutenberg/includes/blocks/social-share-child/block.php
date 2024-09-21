@@ -1,5 +1,23 @@
-<br>
-<b>Fatal error</b>:  Uncaught Error: Call to undefined function __() in C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\social-share-child\block.php:14
-Stack trace:
-#0 {main}
-  thrown in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\social-share-child\block.php</b> on line <b>14</b><br>
+<?php
+/**
+ * Block Information.
+ *
+ * @since 2.0.0
+ *
+ * @package uagb
+ */
+
+$block_slug = 'uagb/social-share-child';
+$block_data = array(
+	'slug'           => '',
+	'link'           => '',
+	'title'          => __( 'Social Share Child', 'ultimate-addons-for-gutenberg' ),
+	'description'    => __( 'Share your content on this social media platform.', 'ultimate-addons-for-gutenberg' ),
+	'default'        => true,
+	'is_child'       => true,
+	'extension'      => false,
+	'dynamic_assets' => array(
+		'dir' => 'social-share-child',
+	),
+	'deprecated'     => false,
+);

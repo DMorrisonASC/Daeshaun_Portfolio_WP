@@ -1,7 +1,27 @@
-<br>
-<b>Warning</b>:  Undefined variable $id in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\animations-extension\frontend.js.php</b> on line <b>10</b><br>
-<br>
-<b>Fatal error</b>:  Uncaught Error: Call to undefined function apply_filters() in C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\animations-extension\frontend.js.php:12
-Stack trace:
-#0 {main}
-  thrown in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\animations-extension\frontend.js.php</b> on line <b>12</b><br>
+<?php
+/**
+ * Frontend JS File.
+ *
+ * @since 2.6.0
+ *
+ * @package uagb
+ */
+
+$selector = '.uagb-block-' . $id;
+
+$animation_data = apply_filters(
+	'uagb_animation_data',
+	array(
+		'UAGAnimationType' => $attr['UAGAnimationType'],
+	),
+	$id
+);
+
+ob_start();
+?>
+window.addEventListener( 'load', function() {
+	UAGBAnimation.init( <?php echo wp_json_encode( $animation_data ); ?> );
+} );
+<?php
+return ob_get_clean();
+?>

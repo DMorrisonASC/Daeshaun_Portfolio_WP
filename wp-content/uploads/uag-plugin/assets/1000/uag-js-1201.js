@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function(){ 				window.addEventListener( 'DOMContentLoaded', () => {
-					const blockScope = document.querySelector( '.uagb-block-e4313e81' );
+					const blockScope = document.querySelector( '.uagb-block-a74c7b51' );
 					if ( ! blockScope ) {
 						return;
 					}

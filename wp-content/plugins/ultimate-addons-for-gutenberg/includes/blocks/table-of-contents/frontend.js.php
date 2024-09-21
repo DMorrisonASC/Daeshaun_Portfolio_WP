@@ -1,20 +1,28 @@
-<br>
-<b>Warning</b>:  Undefined variable $id in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\table-of-contents\frontend.js.php</b> on line <b>13</b><br>
-<br>
-<b>Warning</b>:  Undefined variable $attr in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\table-of-contents\frontend.js.php</b> on line <b>16</b><br>
-<br>
-<b>Warning</b>:  Trying to access array offset on value of type null in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\table-of-contents\frontend.js.php</b> on line <b>16</b><br>
-<br>
-<b>Warning</b>:  Undefined variable $attr in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\table-of-contents\frontend.js.php</b> on line <b>17</b><br>
-<br>
-<b>Warning</b>:  Trying to access array offset on value of type null in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\table-of-contents\frontend.js.php</b> on line <b>17</b><br>
-<br>
-<b>Warning</b>:  Undefined variable $attr in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\table-of-contents\frontend.js.php</b> on line <b>18</b><br>
-<br>
-<b>Warning</b>:  Trying to access array offset on value of type null in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\table-of-contents\frontend.js.php</b> on line <b>18</b><br>
+<?php
+/**
+ * Frontend JS File.
+ *
+ * @since 2.0.0
+ * @var mixed[] $attr
+ * @var int $id
+ *
+ * @package uagb
+ */
+
+$base_selector = ( isset( $attr['classMigrate'] ) && $attr['classMigrate'] ) ? '.uagb-block-' : '#uagb-toc-';
+$selector      = $base_selector . $id;
+
+$attrs_needed_in_js = array(
+	'mappingHeaders'  => $attr['mappingHeaders'],
+	'scrollToTop'     => $attr['scrollToTop'],
+	'makeCollapsible' => $attr['makeCollapsible'],
+);
+
+ob_start();
+?>
 window.addEventListener( 'load', function(){
-	UAGBTableOfContents._run( <br>
-<b>Fatal error</b>:  Uncaught Error: Call to undefined function wp_json_encode() in C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\table-of-contents\frontend.js.php:24
-Stack trace:
-#0 {main}
-  thrown in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\table-of-contents\frontend.js.php</b> on line <b>24</b><br>
+	UAGBTableOfContents._run( <?php echo wp_json_encode( $attrs_needed_in_js ); ?>, '<?php echo esc_attr( $selector ); ?>' );
+} );
+<?php
+return ob_get_clean();
+?>

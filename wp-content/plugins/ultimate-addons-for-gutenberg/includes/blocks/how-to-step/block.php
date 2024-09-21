@@ -1,5 +1,21 @@
-<br>
-<b>Fatal error</b>:  Uncaught Error: Call to undefined function __() in C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\how-to-step\block.php:13
-Stack trace:
-#0 {main}
-  thrown in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\ultimate-addons-for-gutenberg\includes\blocks\how-to-step\block.php</b> on line <b>13</b><br>
+<?php
+/**
+ * Block Information & Attributes File.
+ *
+ * @since 2.0.0
+ *
+ * @package uagb
+ */
+
+$block_slug = 'uagb/how-to-step';
+$block_data = array(
+	'slug'           => '',
+	'title'          => __( 'Step', 'ultimate-addons-for-gutenberg' ),
+	'description'    => __( 'Add relevant content for this step.', 'ultimate-addons-for-gutenberg' ),
+	'default'        => true,
+	'is_child'       => true,
+	'dynamic_assets' => array(
+		'dir' => 'how-to-step',
+	),
+	'deprecated'     => false,
+);
