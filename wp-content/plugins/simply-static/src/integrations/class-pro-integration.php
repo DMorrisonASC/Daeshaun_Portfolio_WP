@@ -1,5 +1,14 @@
-<br>
-<b>Fatal error</b>:  Uncaught Error: Class &quot;Simply_Static\Integration&quot; not found in C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\simply-static\src\integrations\class-pro-integration.php:4
-Stack trace:
-#0 {main}
-  thrown in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\simply-static\src\integrations\class-pro-integration.php</b> on line <b>4</b><br>
+<?php
+namespace Simply_Static;
+
+class Pro_Integration extends Integration {
+
+	public function is_pro() {
+		return true;
+	}
+
+	public function can_run() {
+		return false;
+	}
+
+}
