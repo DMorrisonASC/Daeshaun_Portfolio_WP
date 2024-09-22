@@ -1,25 +1,5 @@
-<?php
-namespace Simply_Static;
-
-class Redirection_Integration extends Pro_Integration {
-	/**
-	 * Given plugin handler ID.
-	 *
-	 * @var string Handler ID.
-	 */
-	protected $id = 'redirection';
-
-	public function __construct() {
-		$this->name = __( 'Redirection', 'simply-static' );
-		$this->description = __( 'Integrates redirections from the "Redirection" Plugin automatically on each export.', 'simply-static' );
-	}
-
-	/**
-	 * Return if the dependency is active.
-	 *
-	 * @return boolean
-	 */
-	public function dependency_active() {
-		return defined( 'REDIRECTION_FILE' );
-	}
-}
+<br>
+<b>Fatal error</b>:  Uncaught Error: Class &quot;Simply_Static\Pro_Integration&quot; not found in C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\simply-static\src\integrations\pro\class-redirection-integration.php:4
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\Daeshaun_Portfolio_WP\wp-content\plugins\simply-static\src\integrations\pro\class-redirection-integration.php</b> on line <b>4</b><br>
